@@ -8,7 +8,7 @@
     "prisma"
   ],
   "license": "MIT",
-  "author": "Felipe Dev",
+  "author": "Vitor Argeri",
   "type": "module",
   "main": "src/server.js",
   "scripts": {

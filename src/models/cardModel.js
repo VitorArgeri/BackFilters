@@ -2,7 +2,7 @@ import prisma from "../../prisma/prisma.js";
 
 class CardModel {
   // Obter todas as cartas
-  async findAll(raridade, ataque, pagina, limite) {
+  async findAll(raridade, ataque, pagina, limite, name) {
 
     if (Number(pagina) < 1) {
       pagina = 1;   
@@ -22,6 +22,12 @@ class CardModel {
     if(ataque) {
       where.attackPoints = {
         gte: Number(ataque), // Maior ou igual ao valor de ataque fornecido
+      }
+    }
+
+    if(name) {
+      where.name = {
+        contains: name, // Contém o nome fornecido (case insensitive)
       }
     }
 
